@@ -1,2 +1,6 @@
 ._temp_.aig
 .map.txt
+adder4_out/
+mult4_out/
+adder8_out/
+mult8_out/
