@@ -5,3 +5,5 @@
 dist/
 
 **/obj*/
+*.dot
+*.vvp
