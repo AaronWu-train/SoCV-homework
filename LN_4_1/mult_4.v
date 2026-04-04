@@ -16,7 +16,7 @@ module mult_4 (
     wire       c1, c2, c3;
 
     // s1 = m0 + (m1 << 1)
-    ripple_carry_adder #(.W(6)) u_stage1 (
+    adder_6 u_stage1 (
         .a({2'b0, m0}),
         .b({1'b0, m1, 1'b0}),
         .cin(1'b0),
@@ -25,7 +25,7 @@ module mult_4 (
     );
 
     // s2 = s1 + (m2 << 2)
-    ripple_carry_adder #(.W(7)) u_stage2 (
+    adder_7 u_stage2 (
         .a({1'b0, s1}),
         .b({1'b0, m2, 2'b0}),
         .cin(1'b0),
@@ -34,7 +34,7 @@ module mult_4 (
     );
 
     // s3 = s2 + (m3 << 3)
-    ripple_carry_adder #(.W(8)) u_stage3 (
+    adder_8 u_stage3 (
         .a({1'b0, s2}),
         .b({1'b0, m3, 3'b0}),
         .cin(1'b0),

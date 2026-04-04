@@ -1,14 +1,14 @@
 # LN_4_1 — 4-bit adder & 4×4 multiplier
 
-Structural Verilog: `full_adder` → `ripple_carry_adder` (parameter `W`) → `adder_4` / `mult_4`.
+Structural Verilog: `full_adder` → fixed-width ripple chains in `adder_4`, `adder_6`, `adder_7`, `adder_8` → `mult_4`.
 
 ## Files
 
 | File | Description |
 |------|-------------|
 | `full_adder.v` | 1-bit full adder |
-| `ripple_carry_adder.v` | W-bit ripple-carry adder |
-| `adder_4.v` | 4-bit adder (`cin` / `cout`) |
+| `adder_4.v` | 4-bit adder (`cin` / `cout`), explicit `full_adder` chain |
+| `adder_wide.v` | `adder_6`, `adder_7`, `adder_8` for multiplier partial-product sums |
 | `mult_4.v` | 4×4 unsigned multiplier, 8-bit product `p` |
 | `tb_ln41.v` | Self-checking testbench for `adder_4` and `mult_4` |
 
@@ -23,8 +23,8 @@ From this directory:
 ```bash
 iverilog -Wall -g2012 -o sim.vvp \
   full_adder.v \
-  ripple_carry_adder.v \
   adder_4.v \
+  adder_wide.v \
   mult_4.v \
   tb_ln41.v
 
