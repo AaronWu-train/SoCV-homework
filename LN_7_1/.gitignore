@@ -1,0 +1,27 @@
+# MiniSat pipeline 產物（./run.sh 可重新產生）
+graphs/
+cnfs/
+raw_outputs/
+.minisat_tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.zip
+
+# 本機虛擬環境
+.venv/
+venv/
+env/
+
+# 編輯器 / OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db

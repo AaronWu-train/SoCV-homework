@@ -1,0 +1,12 @@
+# MiniSat 實驗結果繪圖（plot_results.py）
+# 建立並啟用：
+#   conda env create -f environment.yml
+#   conda activate socv_ln71_plots
+name: socv_ln71_plots
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - pandas
+  - matplotlib
+  - seaborn
